@@ -23,7 +23,8 @@ img_urls = [
 t1 = time.perf_counter()
 
 
-def download_image(img_url):
+def download_image(img_url): # create a function that does a unit of work (download an image) instead of simply
+    # looping through the list of images synchronously
     img_bytes = requests.get(img_url).content
     img_name = img_url.split('/')[3]
     img_name = f'{img_name}.jpg'
